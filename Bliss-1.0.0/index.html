@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Templora - Template Website Pink</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root{
+      --pink:#ff6b9d;
+      --light:#ffb6c1;
+      --dark:#e63970;
+      --bg:#fff0f5;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Segoe UI',sans-serif;
+    }
+
+    body{
+      background:#fff;
+      color:#333;
+      line-height:1.6;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:0 auto;
+      padding:20px;
+    }
+
+    section{
+      padding:60px 0;
+    }
+
+    .pink-bg{
+      background:var(--bg);
+    }
+
+    .title{
+      text-align:center;
+      font-size:2.5rem;
+      color:var(--dark);
+      margin-bottom:10px;
+    }
+
+    .subtitle{
+      text-align:center;
+      color:#777;
+      margin-bottom:40px;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav{
+      background:#fff;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+    }
+
+    .nav-container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 0;
+    }
+
+    .logo{
+      font-size:1.8rem;
+      color:var(--pink);
+      font-weight:700;
+    }
+
+    .nav-links{
+      display:flex;
+      list-style:none;
+    }
+
+    .nav-links li{
+      margin:0 15px;
+    }
+
+    .nav-links a{
+      color:#333;
+      text-decoration:none;
+      font-weight:500;
+      transition:.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
+      color:var(--pink);
+    }
+
+    /* ===== BUTTON ===== */
+    .btn{
+      background:var(--pink);
+      color:#fff;
+      border:none;
+      padding:12px 25px;
+      border-radius:30px;
+      cursor:pointer;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      background:var(--dark);
+      transform:translateY(-2px);
+    }
+
+    /* ===== HOME / HERO ===== */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  background:linear-gradient(135deg,#fff0f5,#ffffff);
+}
+
+.hero-content{
+  max-width:900px;
+}
+
+.hero-text .badge{
+  display:inline-block;
+  background:#e63970;
+  color:#fff;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:12px;
+  margin-bottom:15px;
+}
+
+.hero h1{
+  font-size:48px;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:#e63970;
+}
+
+.hero p{
+  font-size:16px;
+  color:#555;
+  max-width:650px;
+  line-height:1.7;
+  margin-bottom:30px;
+}
+
+.hero-actions{
+  display:flex;
+  gap:15px;
+  margin-bottom:35px;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  background:#e63970;
+  color:#fff;
+  padding:14px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.btn-outline{
+  border:2px solid #e63970;
+  color:#e63970;
+  padding:12px 26px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.hero-stats{
+  display:flex;
+  gap:30px;
+}
+
+.hero-stats div{
+  text-align:center;
+}
+
+.hero-stats strong{
+  font-size:22px;
+  color:#e63970;
+}
+
+.hero-stats span{
+  display:block;
+  font-size:12px;
+  color:#666;
+}
+
+@media(max-width:768px){
+  .hero h1{
+    font-size:36px;
+  }
+  .hero-stats{
+    gap:20px;
+  }
+}
+
+    /* ===== ABOUT ===== */
+.about-company{
+  max-width:850px;
+  margin:auto;
+}
+
+.about-box{
+  background:#fff;
+  padding:40px;
+  border-radius:18px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.05);
+}
+
+.about-box h3{
+  color:var(--dark);
+  margin-bottom:20px;
+  font-size:1.4rem;
+}
+
+.about-box p{
+  color:#555;
+  line-height:1.9;
+  margin-bottom:15px;
+  font-size:1.05rem;
+}
+
+    /* ===== SERVICES ===== */
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-top:30px;
+    }
+
+    .service-card{
+      background:#fff;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      box-shadow:0 5px 15px rgba(0,0,0,0.05);
+      transition:.3s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .service-icon{
+      font-size:2.5rem;
+      color:var(--pink);
+      margin-bottom:15px;
+    }
+
+    /* ===== PORTFOLIO ===== */
+    
+#portfolio{
+  padding:80px 0;
+  background:#fff0f6;
+}
+
+.title{
+  text-align:center;
+  font-size:34px;
+  color:#e63970;
+}
+
+.subtitle{
+  text-align:center;
+  color:#666;
+  margin-bottom:40px;
+}
+
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:30px;
+}
+
+.portfolio-card{
+  background:#fff;
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 15px 35px rgba(0,0,0,.1);
+  transition:.4s;
+  text-decoration:none;
+  color:#333;
+  position:relative;
+}
+
+.portfolio-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 50px rgba(230,57,112,.3);
+}
+
+.portfolio-card h3{
+  color:#e63970;
+  margin-bottom:10px;
+}
+
+.portfolio-card p{
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:15px;
+}
+
+.portfolio-card ul{
+  list-style:none;
+  padding:0;
+  margin-bottom:25px;
+}
+
+.portfolio-card ul li{
+  font-size:13px;
+  margin-bottom:6px;
+}
+
+.portfolio-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.price{
+  font-weight:700;
+  font-size:16px;
+}
+
+.btn{
+  background:#e63970;
+  color:#fff;
+  padding:8px 18px;
+  border-radius:25px;
+  font-size:13px;
+}
+
+.badge{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:#e63970;
+  color:#fff;
+  padding:5px 12px;
+  font-size:11px;
+  border-radius:20px;
+}
+
+.badge.new{
+  background:#6c63ff;
+}
+
+    /* ===== VISI MISI ===== */
+.pink-bg{
+  background:#fff0f5;
+  padding:80px 0;
+}
+
+.title{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:50px;
+  color:#e63970;
+}
+
+.vision-mission{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:30px;
+}
+
+.vision-box,
+.mission-box{
+  background:#fff;
+  border-radius:20px;
+  padding:35px;
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
+  transition:.4s;
+}
+
+.vision-box:hover,
+.mission-box:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 50px rgba(230,57,112,.25);
+}
+
+.icon{
+  font-size:32px;
+  display:inline-block;
+  margin-bottom:15px;
+}
+
+.vision-box h3,
+.mission-box h3{
+  color:#e63970;
+  margin-bottom:15px;
+}
+
+.vision-box p{
+  color:#555;
+  line-height:1.7;
+  font-size:15px;
+}
+
+.mission-box ul{
+  padding-left:18px;
+  margin:0;
+}
+
+.mission-box ul li{
+  margin-bottom:10px;
+  color:#555;
+  font-size:14px;
+}
+
+    /* ===== CONTACT ===== */
+ .contact-section{
+  padding:90px 0;
+  background:#fff;
+}
+
+.contact-desc{
+  text-align:center;
+  max-width:600px;
+  margin:0 auto 50px;
+  color:#666;
+  font-size:15px;
+}
+
+.contact-container{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:40px;
+}
+
+@media(max-width:768px){
+  .contact-container{
+    grid-template-columns:1fr;
+  }
+}
+
+.contact-form{
+  background:#fff;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.form-group{
+  margin-bottom:18px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:14px 16px;
+  border-radius:12px;
+  border:1px solid #ddd;
+  font-size:14px;
+  outline:none;
+}
+
+.contact-form textarea{
+  min-height:130px;
+  resize:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color:#e63970;
+}
+
+.btn-primary{
+  width:100%;
+  background:#e63970;
+  color:#fff;
+  padding:14px;
+  border:none;
+  border-radius:25px;
+  font-size:14px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.btn-primary:hover{
+  background:#c82f5f;
+}
+
+.contact-info{
+  background:#fff0f5;
+  padding:35px;
+  border-radius:20px;
+}
+
+.contact-info h3{
+  color:#e63970;
+  margin-bottom:25px;
+}
+
+.info-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:15px;
+  font-size:14px;
+  color:#444;
+}
+
+.icon{
+  font-size:20px;
+}
+
+.btn-wa{
+  display:inline-block;
+  margin-top:25px;
+  background:#25d366;
+  color:#fff;
+  padding:12px 22px;
+  border-radius:25px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+    @media(max-width:768px){
+      .nav-links{display:none}
+      .hero-content,
+      .about-content,
+      .vision-mission,
+      .contact-container{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="container nav-container">
+    <div class="logo">Templ<span style="color:var(--dark)">ora</span></div>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#vision">Visi Misi</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="hero">
+  <div class="container hero-content">
+
+    <div class="hero-text">
+      <span class="badge">Template Website Profesional</span>
+
+      <h1>
+        Jual Template Website<br>
+        <span>Modern, Cepat & Siap Pakai</span>
+      </h1>
+
+      <p>
+        Solusi praktis untuk UMKM, personal brand, dan startup yang ingin
+        tampil profesional tanpa ribet coding. Semua template kami
+        responsive, SEO friendly, dan siap langsung online.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn-primary">Lihat Template</a>
+        <a href="https://wa.me/6281234567890" class="btn-outline" target="_blank">
+          Konsultasi Gratis
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div><strong>50+</strong><span>Template</span></div>
+        <div><strong>100+</strong><span>Klien</span></div>
+        <div><strong>Fast</strong><span>Support</span></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container about-company">
+    <h2 class="title">About Us</h2>
+    <p class="subtitle">Solusi Profesional Template Website Modern</p>
+
+    <div class="about-box">
+      <h3>Tentang Perusahaan</h3>
+      <p>
+        Templora adalah perusahaan penyedia template website profesional yang
+        berfokus pada kualitas desain, kemudahan penggunaan, dan performa
+        optimal. Kami membantu brand dan perusahaan membangun identitas digital
+        yang kuat melalui tampilan website yang modern, elegan, dan responsif.
+      </p>
+
+      <p>
+        Dengan standar desain yang tinggi dan struktur kode yang rapi,
+        setiap template kami dirancang agar mudah dikembangkan, cepat
+        diakses, serta siap digunakan untuk berbagai kebutuhan bisnis
+        dan perusahaan skala nasional maupun internasional.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+ <section id="services" class="pink-bg">
+  <div class="container">
+    <h2 class="title">Our Services</h2>
+    <p class="subtitle">
+      Layanan profesional kami dalam penyediaan template website berkualitas
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-layer-group service-icon"></i>
+        <h3>Website Template Premium</h3>
+        <p>
+          Menyediakan berbagai template website profesional dengan desain modern,
+          struktur rapi, dan siap digunakan untuk kebutuhan perusahaan maupun
+          personal branding.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-laptop-code service-icon"></i>
+        <h3>Desain Responsif & Optimal</h3>
+        <p>
+          Setiap template dirancang responsif dan optimal di berbagai perangkat,
+          mulai dari desktop, tablet, hingga smartphone.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-cogs service-icon"></i>
+        <h3>Mudah Dikustomisasi</h3>
+        <p>
+          Kode bersih dan terstruktur memudahkan pengembangan lanjutan sesuai
+          kebutuhan bisnis dan identitas brand Anda.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-headset service-icon"></i>
+        <h3>Dukungan Teknis Profesional</h3>
+        <p>
+          Tim kami siap memberikan dukungan teknis dan panduan penggunaan
+          template agar proses implementasi berjalan lancar.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <h2 class="title">Template Website</h2>
+    <p class="subtitle">Siap pakai, responsif, dan cocok untuk berbagai bisnis</p>
+
+    <div class="portfolio-grid">
+
+      <a href="#" class="portfolio-card">
+        <div class="badge">Best Seller</div>
+        <h3>Template Laundry</h3>
+        <p>Website profesional untuk usaha laundry dengan halaman layanan, harga, dan tombol WhatsApp.</p>
+
+        <ul>
+          <li>✔ Responsive</li>
+          <li>✔ Bootstrap 5</li>
+          <li>✔ Mudah diedit</li>
+        </ul>
+
+        <div class="portfolio-footer">
+          <span class="price">Rp 150.000</span>
+          <span class="btn">Lihat Detail</span>
+        </div>
+      </a>
+
+      <a href="#" class="portfolio-card">
+        <div class="badge new">New</div>
+        <h3>Template UMKM</h3>
+        <p>Cocok untuk toko online, jasa, dan personal brand dengan desain modern.</p>
+
+        <ul>
+          <li>✔ SEO Friendly</li>
+          <li>✔ Loading cepat</li>
+          <li>✔ Siap Hosting</li>
+        </ul>
+
+        <div class="portfolio-footer">
+          <span class="price">Rp 120.000</span>
+          <span class="btn">Lihat Detail</span>
+        </div>
+      </a>
+
+      <a href="#" class="portfolio-card">
+        <h3>Template Portfolio</h3>
+        <p>Template personal portfolio untuk freelancer, designer, dan developer.</p>
+
+        <ul>
+          <li>✔ Clean & Minimal</li>
+          <li>✔ Dark Mode</li>
+          <li>✔ GitHub Pages</li>
+        </ul>
+
+        <div class="portfolio-footer">
+          <span class="price">Rp 100.000</span>
+          <span class="btn">Lihat Detail</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- VISI MISI -->
+<section id="vision" class="pink-bg">
+  <div class="container">
+    <h2 class="title">Visi & Misi</h2>
+
+    <div class="vision-mission">
+
+      <div class="vision-box">
+        <span class="icon">🚀</span>
+        <h3>Visi</h3>
+        <p>
+          Menjadi penyedia template website profesional yang membantu
+          UMKM, brand, dan personal bisnis tampil online dengan
+          desain modern, cepat, dan mudah digunakan.
+        </p>
+      </div>
+
+      <div class="mission-box">
+        <span class="icon">🎯</span>
+        <h3>Misi</h3>
+        <ul>
+          <li>Menyediakan template website siap pakai & berkualitas tinggi</li>
+          <li>Membantu UMKM go digital dengan harga terjangkau</li>
+          <li>Menghadirkan desain modern, responsive, dan SEO friendly</li>
+          <li>Memberikan support dan dokumentasi yang mudah dipahami</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="title">Hubungi Kami</h2>
+    <p class="contact-desc">
+      Tertarik dengan template website kami? Konsultasi gratis dan respon cepat.
+    </p>
+
+    <div class="contact-container">
+
+      <!-- FORM -->
+      <form class="contact-form">
+        <div class="form-group">
+          <input type="text" placeholder="Nama Lengkap" required>
+        </div>
+
+        <div class="form-group">
+          <input type="email" placeholder="Email Aktif" required>
+        </div>
+
+        <div class="form-group">
+          <textarea placeholder="Pesan (contoh: ingin template UMKM)" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">
+          Kirim Pesan
+        </button>
+      </form>
+
+      <!-- INFO -->
+      <div class="contact-info">
+        <h3>Informasi Kontak</h3>
+
+        <div class="info-item">
+          <span class="icon">📍</span>
+          <span>kalimantan, Indonesia</span>
+        </div>
+
+        <div class="info-item">
+          <span class="icon">📧</span>
+          <span>keyla@templora.design</span>
+        </div>
+
+        <div class="info-item">
+          <span class="icon">💬</span>
+          <span>WhatsApp Fast Response</span>
+        </div>
+
+        <a href="https://wa.me/6281234567890" class="btn-wa" target="_blank">
+          Chat WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Templora</p>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href'))
+        .scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+</body>
+</html>
